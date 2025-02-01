@@ -1,6 +1,11 @@
-package co.jht.model.response;
+package co.jht.model.mon.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PocketMonsterTypes {
+    @JsonProperty("type")
     private PocketMonsterType pokeType;
 
     public PocketMonsterType getPokeType() {
@@ -15,25 +20,6 @@ public class PocketMonsterTypes {
     public String toString() {
         return "PocketMonsterTypes{" +
                 "pokeType=" + pokeType +
-                '}';
-    }
-}
-
-class PocketMonsterType {
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "PocketMonsterType{" +
-                "name='" + name + '\'' +
                 '}';
     }
 }

@@ -1,16 +1,20 @@
-package co.jht.model.response;
+package co.jht.model.mon.response;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PocketMonster {
-    private Long pokeId;
-    private String pokeName;
-    private Long pokeHeight;
-    private List<PocketMonsterTypes> pokeTypes;
-    private List<PocketMonsterStats> pokeBaseStats;
-    private List<PocketMonsterAbilities> pokeAbilities;
-    private List<PocketMonsterMoves> pokeMoves;
-    private PocketMonsterSprite pokeSprite;
+    @JsonProperty("id") private Long pokeId;
+    @JsonProperty("name") private String pokeName;
+    @JsonProperty("height") private Long pokeHeight;
+    @JsonProperty("types") private List<PocketMonsterTypes> pokeTypes;
+    @JsonProperty("stats") private List<PocketMonsterStats> pokeBaseStats;
+    @JsonProperty("abilities") private List<PocketMonsterAbilities> pokeAbilities;
+    @JsonProperty("moves") private List<PocketMonsterMoves> pokeMoves;
+    @JsonProperty("sprites") private PocketMonsterSprites pokeSprite;
 
     public Long getPokeId() {
         return pokeId;
@@ -68,11 +72,11 @@ public class PocketMonster {
         this.pokeMoves = pokeMoves;
     }
 
-    public PocketMonsterSprite getPokeSprite() {
+    public PocketMonsterSprites getPokeSprite() {
         return pokeSprite;
     }
 
-    public void setPokeSprite(PocketMonsterSprite pokeSprite) {
+    public void setPokeSprite(PocketMonsterSprites pokeSprite) {
         this.pokeSprite = pokeSprite;
     }
 

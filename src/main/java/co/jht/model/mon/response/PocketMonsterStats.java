@@ -1,8 +1,12 @@
-package co.jht.model.response;
+package co.jht.model.mon.response;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class PocketMonsterStats {
-    private Long baseStat;
-    private PocketMonsterStat pokeStat;
+    @JsonProperty("base_stat") private Long baseStat;
+    @JsonProperty("stat") private PocketMonsterStat pokeStat;
 
     public Long getBaseStat() {
         return baseStat;
@@ -25,25 +29,6 @@ public class PocketMonsterStats {
         return "PocketMonsterStats{" +
                 "baseStat=" + baseStat +
                 ", pokeStat=" + pokeStat +
-                '}';
-    }
-}
-
-class PocketMonsterStat {
-    private String name;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Override
-    public String toString() {
-        return "PocketMonsterStat{" +
-                "name='" + name + '\'' +
                 '}';
     }
 }
