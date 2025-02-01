@@ -1,3 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/poke_data_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  cache:
+    type: simple
+
 pokeapi:
   base:
     uri: "https://pokeapi.co/api/v2"
